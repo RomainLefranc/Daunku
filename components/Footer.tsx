@@ -1,7 +1,6 @@
-"use client";
 import React from "react";
 import Link from "next/link";
-import { FOOTER_LINKS } from "@/data/data";
+import { FOOTER_LINKS } from "@/data";
 import FadeIn from "@/components/FadeIn";
 
 function Footer() {

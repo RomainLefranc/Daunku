@@ -2,22 +2,20 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, PropsWithChildren } from "react";
 
-type FadeInProps = {
+type FadeInProps = PropsWithChildren & {
   delay: number;
   direction: "right" | "left" | "up" | "down";
   className?: string;
 };
 
-const FadeIn = ({ children, delay, direction, className }: PropsWithChildren<FadeInProps>) => {
+function FadeIn({ children, delay, direction, className }: FadeInProps) {
   const ref = useRef(null);
 
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
+    if (isInView) controls.start("visible");
   }, [isInView, controls]);
 
   return (
@@ -47,6 +45,6 @@ const FadeIn = ({ children, delay, direction, className }: PropsWithChildren<Fad
       {children}
     </motion.div>
   );
-};
+}
 
 export default FadeIn;

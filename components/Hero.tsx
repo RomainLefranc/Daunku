@@ -9,7 +9,7 @@ import searchIcon from "@/public/search-icon.svg";
 import NavLink from "@/components/NavLink";
 import FadeIn from "@/components/FadeIn";
 
-const Hero = () => {
+function Hero() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
@@ -70,6 +70,6 @@ const Hero = () => {
       <div className="absolute h-[50px] xs:h-[150px] bottom-0 w-full bg-[linear-gradient(180deg,_#ffffff00_0%,_#FFF_100%)]" />
     </div>
   );
-};
+}
 
 export default Hero;

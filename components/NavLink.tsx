@@ -1,14 +1,12 @@
-"use client";
 import { Link } from "react-scroll";
 import { PropsWithChildren } from "react";
 
-type NavLinkProps = {
+type NavLinkProps = PropsWithChildren & {
   mobileMenu?: boolean;
   offset?: number;
   to: string;
 };
-
-const NavLink = ({ children, to, offset = -50, mobileMenu = false }: PropsWithChildren<NavLinkProps>) => {
+function NavLink({ children, to, offset = -50, mobileMenu = false }: NavLinkProps) {
   const className = mobileMenu
     ? "text-lg text-black hover:text-white cursor-pointer hover:bg-[linear-gradient(90deg,_#2AF598_0%,_#009EFD_100%)] w-full text-center"
     : "text-lg lg:text-xl text-white cursor-pointer hover:bg-[linear-gradient(90deg,_#2AF598_0%,_#009EFD_100%)] hover:bg-clip-text hover:text-transparent";
@@ -18,6 +16,6 @@ const NavLink = ({ children, to, offset = -50, mobileMenu = false }: PropsWithCh
       {children}
     </Link>
   );
-};
+}
 
 export default NavLink;

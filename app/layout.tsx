@@ -1,5 +1,4 @@
 import { Poppins } from "next/font/google";
-import Footer from "@/components/Footer";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -11,9 +10,7 @@ const poppins = Poppins({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={poppins.className}>
-        {children} <Footer />
-      </body>
+      <body className={poppins.className}>{children}</body>
     </html>
   );
 }
